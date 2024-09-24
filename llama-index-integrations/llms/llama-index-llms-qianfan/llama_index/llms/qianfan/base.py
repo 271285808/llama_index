@@ -103,6 +103,7 @@ def parse_chat_response(resp_dict: Dict) -> ChatResponse:
     """
     resp = ChatResp(**resp_dict)
     return ChatResponse(
+        raw=resp_dict,
         message=ChatMessage(role=MessageRole.ASSISTANT, content=resp.result)
     )
 
